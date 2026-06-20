@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+*.egg-info/
+.env
+discord_export.json
+.pytest_cache/
+.venv/
+dist/
+build/

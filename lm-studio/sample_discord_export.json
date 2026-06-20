@@ -1,0 +1,69 @@
+# Sample Discord Export for mcptool
+# This demonstrates the format expected by mcptool
+
+[
+  {
+    "id": "msg_001",
+    "author": {"username": "sarah_", "name": "Sarah Chen"},
+    "content": "The issue was that the deployment failed because of a missing environment variable. Turns out it was just needed to set APP_ENV=production. Fixed by adding it to .env!",
+    "timestamp": "2025-07-23T14:32:00Z",
+    "channelId": "help",
+    "reactionCount": 14
+  },
+  {
+    "id": "msg_002",
+    "author": {"username": "dev_mike", "name": "Mike Johnson"},
+    "content": "Had the same error when deploying last week — just needed to update the docker-compose version and restart. Works now!",
+    "timestamp": "2025-06-15T09:18:00Z",
+    "channelId": "general",
+    "reactionCount": 6
+  },
+  {
+    "id": "msg_003",
+    "author": {"username": "lisa_dev", "name": "Lisa Wong"},
+    "content": "So I tried adding the deployment config and it finally worked. The key was having the right node version in .nvmrc",
+    "timestamp": "2025-07-20T16:45:00Z",
+    "channelId": "help",
+    "reactionCount": 9
+  },
+  {
+    "id": "msg_004",
+    "author": {"username": "alex_dev", "name": "Alex Rivera"},
+    "content": "You can fix this by checking your environment variables and making sure the database URL is correct in production",
+    "timestamp": "2025-07-18T11:30:00Z",
+    "channelId": "help",
+    "reactionCount": 4
+  },
+  {
+    "id": "msg_005",
+    "author": {"username": "jenny_kim", "name": "Jenny Kim"},
+    "content": "I think the problem is that your TypeScript config is set up wrong. Try setting target to ES2020 and moduleResolution to node16.",
+    "timestamp": "2025-07-22T08:15:00Z",
+    "channelId": "general",
+    "reactionCount": 7
+  },
+  {
+    "id": "msg_006",
+    "author": {"username": "tom_dev", "name": "Tom Baker"},
+    "content": "Just need to run npx prisma migrate and it works. Simple as that!",
+    "timestamp": "2025-07-19T20:10:00Z",
+    "channelId": "help",
+    "reactionCount": 3
+  },
+  {
+    "id": "msg_007",
+    "author": {"username": "emma_dev", "name": "Emma Davis"},
+    "content": "The deployment error was actually because of a missing environment variable. Turns out it was just needed to set APP_ENV=production.",
+    "timestamp": "2025-07-17T13:22:00Z",
+    "channelId": "help",
+    "reactionCount": 8
+  },
+  {
+    "id": "msg_008",
+    "author": {"username": "david_dev", "name": "David Park"},
+    "content": "I had the same error when deploying last week. Just needed to update docker-compose version and restart.",
+    "timestamp": "2025-07-16T09:45:00Z",
+    "channelId": "general",
+    "reactionCount": 5
+  }
+]

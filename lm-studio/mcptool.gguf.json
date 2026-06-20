@@ -1,0 +1,53 @@
+{
+  "llama": {
+    "arch": "mcptool",
+    "vocab_size": 32000,
+    "context_length": 4096,
+    "embedding_length": 4096,
+    "block_count": 32,
+    "feed_forward_length": 11008,
+    "head_count": 32,
+    "key_value_head_count": 8,
+    "layer_norm_epsilon": 1.0e-5,
+    "rope_theta": 500000.0
+  },
+  "general": {
+    "architecture": "llama",
+    "file_type": 2,
+    "quantization_version": 2,
+    "alignment": 32
+  },
+  "tokenizer.ggml": {
+    "tokens": [
+      "<unk>",
+      "<s>",
+      "</s>",
+      "<0x00>",
+      "<0x01>",
+      "<0x02>",
+      "<0x03>",
+      "<0x04>",
+      "<0x05>",
+      "<0x06>"
+    ],
+    "vocab_size": 32000,
+    "name": "ggml-vocab.gguf",
+    "add_bos_token": true,
+    "add_eos_token": false
+  },
+  "tokenizer.chat_template.jinja": "{{ bos_token }}\n{% for message in messages %}\n    {% if message['role'] == 'user' %}\n<|user|>\n{{ message['content'] }}\n<|end|>\n    {% elif message['role'] == 'assistant' %}\n<|assistant|>\n{{ message['content'] }}\n<|end|>\n    {% elif message['role'] == 'system' %}\n<|system|>\nYou are mcptool, a helpful assistant specialized in searching Discord messages for solutions.\n\nWhen the user asks about a problem, search through Discord messages using keywords and return:\n1. The most relevant solution-like messages (containing \"fixed\", \"worked\", \"the issue was\", etc.)\n2. Ranked by relevance score based on keyword matches, message length, reactions, and solution indicators.\n3. Human-readable format with author name, timestamp, content, and reaction count.\n\nIf no discord_export.json is found, create sample data to demonstrate the search results.\n\nExample output:\n───────────────────────────────────────────────────────\n🔍 Search results for keyword(s) \"deployed error\"\n───────────────────────────────────────────────────────\n\n[2025-07-23 14:32] sarah_        Score: 9.8 ✨\n   Channel: #help\n   The issue was that the deployment failed because of a missing environment variable. Turns out it was just needed to set APP_ENV=production. Fixed by adding it to .env!\n   👍 14 reactions\n\n[2025-06-15 09:18] dev_mike      Score: 7.2 ✨\n   Channel: #general\n   Had the same error when deploying last week — just needed to update the docker-compose version and restart. Works now!\n   👍 6 reactions\n\n───────────────────────────────────────────────────────\n    {% endif %}\n{% endfor %}\n<|assistant|>\n",
+    "add_special_tokens": true
+  },
+  "lmstudio-tokenizer.ggml": {
+    "tokens": [
+      "<unk>",
+      "<s>",
+      "</s>"
+    ],
+    "special_tokens": [
+      "<unk>",
+      "<s>",
+      "</s>"
+    ]
+  }
+}
